@@ -15,6 +15,8 @@
             <!--Adding CSS Files Styles-->
             <action method="addCss"><stylesheet>css/quangtran.css</stylesheet><params/></action>
             <action method="addCss"><stylesheet>css/font-awesome.min.css</stylesheet><params/></action>
+            <action method="addCss"><stylesheet>css/sawbones-product-homepage.css</stylesheet><params/></action>
+            <action method="addCss"><stylesheet>css/styles.css</stylesheet><params/></action>
            <!--  <action method="addCss"><stylesheet>css/font-awesome.min.css</stylesheet><params/></action>
             <action method="addCss"><stylesheet>css/flexslider.css</stylesheet><params/></action>
             <action method="addCss"><stylesheet>css/owl.carousel.css</stylesheet><params/></action>

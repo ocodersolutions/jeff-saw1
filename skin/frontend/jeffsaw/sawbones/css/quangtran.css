@@ -19,6 +19,10 @@ li.level-top a{
 li.level-top a:hover{
     opacity: 1;
   }
+.navbar.w-nav .w-container a.w-nav-brand img.sawboneslogo{
+  width: 215px;
+  height: 50px;
+}
 @media (min-width: 768px){
   .navbar.w-nav .w-container {
     width: 100%;
@@ -87,7 +91,7 @@ li.level-top a:hover{
   nav.nav-menu.w-nav-menu .nav-container ul#nav li.parent a.level-top:after{
     content: "\f0da";
     position: absolute;
-    top: 28px;
+    top: 20px;
     right: 32px;
     font-family: Fontawesome, sans-serif;
     color: #fff;
@@ -99,5 +103,89 @@ li.level-top a:hover{
   }
   nav.nav-menu.w-nav-menu .nav-container ul#nav li.level0 >ul{
     display: none;
+    padding-left: 30px;
+    margin: 0;
+    background-color: rgb(86, 146, 182);
   }
+  nav.nav-menu.w-nav-menu .nav-container ul#nav li.level0 ul.level0 li.level1 {
+    list-style-type: none;
+  }
+}
+/* cart */
+.header-minicart {
+    display: inline-block;
+}
+a.skip-cart {
+    color: rgb(51, 153, 204);
+    text-transform: uppercase;
+    width: auto;
+    padding: 0px 10px;
+}
+a.skip-cart:before{
+  content: "\f07a";
+  font-family: Fontawesome;
+}
+.skip-link {
+    position: relative;
+    float: left;
+    width: 20%;
+    height: 44px;
+    color: rgb(99, 99, 99);
+    line-height: 42px;
+    text-align: center;
+    background: rgb(255, 255, 255);
+}
+.skip-link .icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+/* product detail */
+.main-container.col1-layout{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0px;
+    max-width: 100%;
+}
+.col-main{
+  
+  top:0;
+}
+.wrapper .page .main-container .main .breadcrumbs {
+    position: absolute;
+    top: 185px;
+    z-index: 99;
+    color: #fff;
+}
+.wrapper .page .main-container .main .breadcrumbs ul li >a{
+  color: hsla(0, 0%, 100%, .75);
+  font-size: 12px;
+}
+.wrapper .page .main-container .main .breadcrumbs ul li >strong{
+  color: #fff;
+  font-weight: 700;
+}
+.product-view .product-img-box .product-name{
+    display: block;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    width: 420px;
+    margin-top: 50px;
+    padding: 15px 15px 15px 56px;
+    background-color: rgba(0, 0, 0, .7);
+    z-index: 9;
+    height: 86px;
+}
+.product-view .product-img-box .product-name h1 {
+  font-family: Lato;
+  font-weight: 300;
+    margin-top: 16px;
+    margin-bottom: 0px;
+    color: #fff;
+    font-size: 34px;
+    line-height: 36px;
 }

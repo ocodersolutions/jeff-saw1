@@ -1,7 +1,7 @@
 <div class="section-header">
 	<div class="navbar w-nav">
 		<div class="nav-container w-container">
-		    <a class="brandwrap w-clearfix w-nav-brand" href="#"><img class="sawboneslogo" src="http://uploads.webflow.com/57994ac141136a134b02557d/57a600cec3e841c509ebf7a2_sawbones-logo-white.png" width="215">
+		    <a class="brandwrap w-clearfix w-nav-brand" href="<?php echo $this->getUrl('') ?>"><img class="sawboneslogo" src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?> width="215">
 		    </a>
 		    <nav class="nav-menu w-nav-menu" role="navigation">
 		    	<!-- <a class="active nav-link w-nav-link" href="#" style="max-width: 940px;">Products&nbsp;<span class="fa-blue"></span></a>
@@ -20,3 +20,17 @@
 		<div class="w-nav-overlay"></div>
 	</div>
 </div>
+
+ 	<div class="account-cart-wrapper">
+	    <a href="<?php echo $this->helper('customer')->getAccountUrl(); ?>" data-target-element="#header-account" class="skip-link skip-account">
+	        <span class="icon"></span>
+	        <span class="label"><?php echo $this->__('Account'); ?></span>
+	    </a>
+
+	    <!-- Cart -->
+		<div class="header-minicart">
+	        <?php echo $this->getChildHtml('minicart_head'); ?>
+	    </div>
+	    
+    </div>
+    
