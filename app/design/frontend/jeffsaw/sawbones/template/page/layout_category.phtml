@@ -96,10 +96,12 @@
                 foreach(explode(',',$subcats) as $subCatid){ 
                     $_category = Mage::getModel('catalog/category')->load($subCatid);
                 if($_category->getIsActive()) { ?>
+
+
                     <div class="categorypageslide w-slide" style="transform: translateX(0px); opacity: 1;">
                         <div class="categorypageslidepic"></div>
                         <div class="categorypageslidetitle">
-                            <h4 class="categorypageslidetitletext"><?php echo $_category->getName(); ?></h4>
+                            <a href="<?php echo $_category->getURL(); ?>"><h4 class="categorypageslidetitletext"><?php echo $_category->getName(); ?></h4></a>
                         </div>
                     </div>
 
