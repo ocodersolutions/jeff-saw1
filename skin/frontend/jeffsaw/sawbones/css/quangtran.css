@@ -1,0 +1,103 @@
+li.level-top a{
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    font-family: Lato, sans-serif;
+    opacity: 0.75;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    position: relative;
+    display: block;
+    vertical-align: top;
+    padding: 20px;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+  }
+li.level-top a:hover{
+    opacity: 1;
+  }
+@media (min-width: 768px){
+  .navbar.w-nav .w-container {
+    width: 100%;
+  }
+  nav.nav-menu.w-nav-menu{
+    display: block;
+    position: absolute;
+    left: 215px;
+  }
+  .nav-container #nav{
+    padding:0;
+    margin:0;
+  }
+  li.level-top{
+  position: relative;
+  display: inline-block;
+  }
+  li.level-top:hover{
+    cursor: pointer;
+  }
+  li.level-top a.level-top:after{
+    content: "\f0d7";
+    position: relative;
+    top: 2px;
+    right: -2px;
+    font-family: Fontawesome, sans-serif;
+    color: #537d96;
+    font-size: 18px;
+  }
+  
+  
+  li.level-top > ul{
+    //display:none;
+  }
+  li.level-top:hover > ul.level0{
+    //display: block;
+  }
+  ul.level0{
+    display: none;
+    width: 250px;
+    padding: 0;
+    position: absolute;
+    background-color: #537d96;
+  }
+  ul.level0 > li{
+    list-style-type: none;
+  }
+  li.level-top:hover > ul.level0{
+    display: block;
+  }
+  ul.level0 a{
+    padding:5px;
+  }
+}
+@media (max-width: 767px){
+
+  ul.nav{
+    background-color: #537d96;
+  }
+  nav.nav-menu.w-nav-menu .nav-container ul#nav{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    background-color: #537d96;
+  }
+  nav.nav-menu.w-nav-menu .nav-container ul#nav li.parent a.level-top:after{
+    content: "\f0da";
+    position: absolute;
+    top: 28px;
+    right: 32px;
+    font-family: Fontawesome, sans-serif;
+    color: #fff;
+    font-size: 18px;
+  }
+
+  nav.nav-menu.w-nav-menu .nav-container ul#nav li.level0{
+    display: block;
+  }
+  nav.nav-menu.w-nav-menu .nav-container ul#nav li.level0 >ul{
+    display: none;
+  }
+}
