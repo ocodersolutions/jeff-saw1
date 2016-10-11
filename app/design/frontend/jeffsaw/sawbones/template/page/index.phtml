@@ -9,11 +9,10 @@
     <?php echo $this->getChildHtml('header') ?>
 
     <?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/home.phtml')->toHtml(); ?>
-    
 
 </div>
-<a href="http://webflow.com?utm_campaign=brandjs" style="color: rgb(170, 173, 176); text-decoration: none;"><div style="position: fixed; bottom: 0px; right: 0px; z-index: 2147483647; border-top-left-radius: 5px; padding: 8px 12px 5px 15px; font-family: Arial; font-size: 10px; text-transform: uppercase; opacity: 1; transition: opacity 0.5s ease-in-out; background-color: rgb(43, 50, 57);">Built with<img src="https://daks2k3a4ib2z.cloudfront.net/54153e6a3d25f2755b1f14ed/5445a4b1944ecdaa4df86d3e_subdomain-brand.svg" style="opacity: 0.9; width: 57px; vertical-align: middle; padding-left: 4px; padding-bottom: 3px;"></div></a>
+<?php echo $this->getChildHtml('footer') ?>
+
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
-<script src="<?php echo $this->getSkinUrl(); ?>js/webflow.js"></script>
+
 </html>
