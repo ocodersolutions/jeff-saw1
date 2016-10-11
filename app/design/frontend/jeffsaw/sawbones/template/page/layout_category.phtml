@@ -61,20 +61,22 @@
     <div class="w-row">
         <div class="w-col w-col-3">
             <h3 class="narrowby">Narrow By:</h3>
-            <div class="categorywrap">
-                <?php $_helper = Mage::helper('catalog/category');
-                $_categories = $_helper->getStoreCategories();
-                if (count($_categories) >= 0){
-                    foreach($_categories as $_category){
-                        $_category = Mage::getModel('catalog/category')->load($_category->getId());
-                        $_subcategories = $_category->getChildrenCategories();
-                        if (count($_subcategories) >= 0){ ?>
 
+            <div class="categorywrap">
+            <?php 
+            $parentCategoryId =  Mage::registry('current_category')->getId();
+            $cat = Mage::getModel('catalog/category')->load($parentCategoryId);
+            $subcats = $cat->getChildren();
+
+            foreach(explode(',',$subcats) as $subCatid){ 
+                $_category = Mage::getModel('catalog/category')->load($subCatid);
+            if($_category->getIsActive()) { ?>
                 <div class="categoryblock">
-                    <a href="<?php echo $_category->getURL(); ?>"><h4 class="categoryblocktext"><?php echo $_category->getName(); ?></h4></a>
+                    <a href="<?php echo $_category->getURL(); ?>"><h4 class="categoryblocktext">
+                    <?php echo $_category->getName(); ?></h4></a>
                     <h4 class="categoryblocktext farrow"></h4>
                 </div>
-                <?php }}} ?>
+            <?php }} ?>
             </div>
         </div>
 
@@ -87,15 +89,13 @@
             </p>
             <div class="categorypageslider smallslider w-slider" data-animation="slide" data-duration="500" data-infinite="1">
                 <div class="w-clearfix w-slider-mask">
-                <?php $_helper = Mage::helper('catalog/category');
-                $_categories = $_helper->getStoreCategories();
-                if (count($_categories)>= 0){
-                    foreach($_categories as $_category){
-                        $_category = Mage::getModel('catalog/category')->load($_category->getId());
-                        $_subcategories = $_category->getChildrenCategories();
-                        if (count($_subcategories)>= 0){ ?>
+                <?php $parentCategoryId =  Mage::registry('current_category')->getId();
+                $cat = Mage::getModel('catalog/category')->load($parentCategoryId);
+                $subcats = $cat->getChildren();
 
-
+                foreach(explode(',',$subcats) as $subCatid){ 
+                    $_category = Mage::getModel('catalog/category')->load($subCatid);
+                if($_category->getIsActive()) { ?>
                     <div class="categorypageslide w-slide" style="transform: translateX(0px); opacity: 1;">
                         <div class="categorypageslidepic"></div>
                         <div class="categorypageslidetitle">
@@ -103,7 +103,7 @@
                         </div>
                     </div>
 
-                <?php }}} ?>
+                <?php }} ?>
                 </div>
                 <div class="w-slider-arrow-left">
                     <div class="prodslideicon w-icon-slider-left"></div>
