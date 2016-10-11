@@ -1,0 +1,133 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2016 X.commerce, Inc. and affiliates (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Template for Mage_Page_Block_Html
+ */
+?>
+
+<!DOCTYPE html>
+
+<!--[if lt IE 7 ]> <html lang="<?php echo $this->getLang(); ?>" id="top" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="<?php echo $this->getLang(); ?>" id="top" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="<?php echo $this->getLang(); ?>" id="top" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="<?php echo $this->getLang(); ?>" id="top" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="<?php echo $this->getLang(); ?>" id="top" class="no-js"> <!--<![endif]-->
+
+<head>
+<?php echo $this->getChildHtml('head') ?>
+</head>
+<body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
+<?php echo $this->getChildHtml('after_body_start') ?>
+<div class="wrapper">
+    <?php echo $this->getChildHtml('global_notices') ?>
+    <div class="page">
+        <?php echo $this->getChildHtml('header') ?>
+        <div class="section1 section1proddetail">
+    <div class="breadcrumbs"><span class="breadnotcurrentlisting">Home&nbsp;</span>/&nbsp;<span class="breadcurrent">Biomechanical</span>
+    </div>
+    <div class="cartcheckoutwrap w-clearfix">
+        <div class="checkoutwrap">
+            <h4 class="checktext">Checkout</h4>
+        </div>
+        <div class="cartwrap">
+            <h1 class="carttext">0<span class="fa checkout"></span></h1>
+        </div>
+    </div>
+    <div class="w-row">
+        <div class="w-col w-col-3">
+            <h3 class="narrowby">Narrow By:</h3>
+
+            <div class="categorywrap">
+            <?php 
+            $parentCategoryId =  Mage::registry('current_category')->getId();
+            $cat = Mage::getModel('catalog/category')->load($parentCategoryId);
+            $subcats = $cat->getChildren();
+
+            foreach(explode(',',$subcats) as $subCatid){ 
+                $_category = Mage::getModel('catalog/category')->load($subCatid);
+            if($_category->getIsActive()) { ?>
+                <div class="categoryblock">
+                    <a href="<?php echo $_category->getURL(); ?>"><h4 class="categoryblocktext">
+                    <?php echo $_category->getName(); ?></h4></a>
+                    <h4 class="categoryblocktext farrow"></h4>
+                </div>
+            <?php }} ?>
+            </div>
+        </div>
+
+
+
+        <div class="categorypagecol2 w-col w-col-9">
+            <h2 class="h2 prod-category"><?php $_category_detail=Mage::registry('current_category');
+            echo $_category_detail->getName();?></h2>
+            <p class="categorypagedesc"><?php echo Mage::getModel('catalog/layer')->getCurrentCategory()->getDescription();  ?>
+            </p>
+            <div class="categorypageslider smallslider w-slider" data-animation="slide" data-duration="500" data-infinite="1">
+                <div class="w-clearfix w-slider-mask">
+                <?php $parentCategoryId =  Mage::registry('current_category')->getId();
+                $cat = Mage::getModel('catalog/category')->load($parentCategoryId);
+                $subcats = $cat->getChildren();
+
+                foreach(explode(',',$subcats) as $subCatid){ 
+                    $_category = Mage::getModel('catalog/category')->load($subCatid);
+                if($_category->getIsActive()) { ?>
+
+
+                    <div class="categorypageslide w-slide" style="transform: translateX(0px); opacity: 1;">
+                        <div class="categorypageslidepic"></div>
+                        <div class="categorypageslidetitle">
+                            <a href="<?php echo $_category->getURL(); ?>"><h4 class="categorypageslidetitletext"><?php echo $_category->getName(); ?></h4></a>
+                        </div>
+                    </div>
+
+                <?php }} ?>
+                </div>
+                <div class="w-slider-arrow-left">
+                    <div class="prodslideicon w-icon-slider-left"></div>
+                </div>
+                <div class="w-slider-arrow-right">
+                    <div class="prodslideicon w-icon-slider-right"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cartcheckoutwrap w-clearfix">
+        <div class="checkoutwrap">
+            <h4 class="checktext">Checkout</h4>
+        </div>
+        <div class="cartwrap">
+            <h1 class="carttext">0<span class="fa checkout"></span></h1>
+        </div>
+    </div>
+</div>
+        
+    </div>
+</div>
+<?php echo $this->getAbsoluteFooter() ?>
+</body>
+</html>

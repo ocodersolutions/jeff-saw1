@@ -31,8 +31,15 @@
 <meta name="robots" content="<?php echo htmlspecialchars($this->getRobots()) ?>" />
 <link rel="icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
 <link rel="shortcut icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
-<script src="<?php echo $this->getSkinUrl(); ?>js/webflow.js"></script>
+<link rel="stylesheet" href="<?php echo $this->getSkinUrl(); ?>css/sawbones-product-homepage.css" type="text/css" />
+<script src="https://daks2k3a4ib2z.cloudfront.net/0globals/modernizr-2.7.1.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+<script type="text/javascript">WebFont.load({
+google: {
+families: ["Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic"]
+}
+});</script>
+
 <!--[if lt IE 7]>
 <script type="text/javascript">
 //<![CDATA[
@@ -45,3 +52,8 @@
 <?php echo $this->getChildHtml() ?>
 <?php echo $this->helper('core/js')->getTranslatorScript() ?>
 <?php echo $this->getIncludes() ?>
+<style type="text/css">
+	body{
+	    font-family: Lato, sans-serif;
+	}
+</style>
