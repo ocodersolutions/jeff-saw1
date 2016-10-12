@@ -1149,7 +1149,7 @@ a.button:hover {
 
 .breadcrumbs a {
   float: left;
-  color: #636363;
+  color: #0066a4;
 }
 
 .breadcrumbs a:hover {
@@ -1157,7 +1157,7 @@ a.button:hover {
 }
 
 .breadcrumbs strong {
-  color: #636363;
+  color: #0066a4;
   font-weight: normal;
 }
 

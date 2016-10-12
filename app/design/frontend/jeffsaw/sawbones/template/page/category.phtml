@@ -4,28 +4,39 @@
 <head>
 <?php echo $this->getChildHtml('head') ?>
 </head>
-<body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
-<?php echo $this->getChildHtml('after_body_start') ?>
-<div class="wrapper">
-    <?php echo $this->getChildHtml('global_notices') ?>
-    <div class="page">
+<body<?php echo $this->getBodyClass()?' class="body '.$this->getBodyClass().'"':'' ?>>
         <?php echo $this->getChildHtml('header') ?>
-        <div class="main-container col2-left-layout" style="max-width: none;">
-            <div class="main">
-                <?php echo $this->getChildHtml('breadcrumbs') ?>
-                <div class="col-main">
-                    <?php echo $this->getChildHtml('content') ?>
-                </div>
-                <div class="col-left sidebar">
+        <div class="section1 section1proddetail" style="max-width: none;">
+        <?php echo $this->getChildHtml('breadcrumbs') ?>
+        <div class="cartcheckoutwrap w-clearfix"><div class="checkoutwrap"><h4 class="checktext">Checkout</h4></div><div class="cartwrap"><h1 class="carttext">0<span class="fa checkout"></span></h1></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="w-row">
+                
+                <div class="w-col w-col-3">
                     <?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/left.phtml')->toHtml(); ?>
+                </div>
+                <div class="w-col w-col-9">
+                    <?php echo $this->getChildHtml('content') ?>
                 </div>
             </div>
         </div>
         <?php echo $this->getChildHtml('footer') ?>
         <?php echo $this->getChildHtml('global_cookie_notice') ?>
         <?php echo $this->getChildHtml('before_body_end') ?>
-    </div>
-</div>
+    
+
 <?php echo $this->getAbsoluteFooter() ?>
 </body>
 </html>
