@@ -32,27 +32,27 @@
  */
 ?>
 <?php if($this->getCollection()->getSize()): ?>
-<div class="toolbar">
+<div class="filterbar w-row">
     <?php if( $this->isExpanded() ): ?>
-        <div class="sorter">
+        <div class="sorter" >
             <?php if( $this->isEnabledViewSwitcher() ): ?>
                 <p class="view-mode">
                     <?php $_modes = $this->getModes(); ?>
                     <?php if($_modes && count($_modes)>1): ?>
-                        <label><?php echo $this->__('View as') ?></label>
+                        <label style="color: white;"><?php echo $this->__('View as') ?></label>
                         <?php foreach ($this->getModes() as $_code=>$_label): ?>
                             <?php if($this->isModeActive($_code)): ?>
-                                <strong title="<?php echo $_label ?>" class="<?php echo strtolower($_code); ?>"><?php echo $_label ?></strong>
+                                <strong style="margin-top: -4px;" title="<?php echo $_label ?>" class="<?php echo strtolower($_code); ?>"><?php echo $_label ?></strong>
                             <?php else: ?>
-                                <a href="<?php echo $this->getModeUrl($_code) ?>" title="<?php echo $_label ?>" class="<?php echo strtolower($_code); ?>"><?php echo $_label ?></a>
+                                <a style="margin-top: -4px;" href="<?php echo $this->getModeUrl($_code) ?>" title="<?php echo $_label ?>" class="<?php echo strtolower($_code); ?>"><?php echo $_label ?></a>
                             <?php endif; ?>
                         <?php endforeach; ?>
                     <?php endif; ?>
                 </p>
             <?php endif; ?>
 
-            <div class="sort-by">
-                <label><?php echo $this->__('Sort By') ?></label>
+            <div class="sort-by" >
+                <label style="color: white;"><?php echo $this->__('Sort By') ?></label>
                 <select onchange="setLocation(this.value)" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Sort By')) ?>">
                     <?php foreach($this->getAvailableOrders() as $_key=>$_order): ?>
                         <option value="<?php echo $this->getOrderUrl($_key, 'asc') ?>"<?php if($this->isOrderCurrent($_key)): ?> selected="selected"<?php endif; ?>>
@@ -61,7 +61,7 @@
                     <?php endforeach; ?>
                 </select>
                 <?php if($this->getCurrentDirection() == 'desc'): ?>
-                    <a href="<?php echo $this->getOrderUrl(null, 'asc') ?>" class="sort-by-switcher sort-by-switcher--desc" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Set Ascending Direction')) ?>"><?php echo $this->__('Set Ascending Direction') ?></a>
+                    <a  href="<?php echo $this->getOrderUrl(null, 'asc') ?>" class="sort-by-switcher sort-by-switcher--desc" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Set Ascending Direction')) ?>"><?php echo $this->__('Set Ascending Direction') ?></a>
                 <?php else: ?>
                     <a href="<?php echo $this->getOrderUrl(null, 'desc') ?>" class="sort-by-switcher sort-by-switcher--asc" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Set Descending Direction')) ?>"><?php echo $this->__('Set Descending Direction') ?></a>
                 <?php endif; ?>
